@@ -19,9 +19,7 @@ public class AsyncSeat {
         }
     }
 
-    public void queryReservation(int seatIndex) {
-        System.out.println("Reader Thread Querying SeatNO: " + seatIndex + " Status: " + reserved);
-    }
+
 
     public void setReserved(boolean reserved) {
         this.reserved = reserved;

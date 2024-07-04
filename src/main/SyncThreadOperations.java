@@ -8,7 +8,8 @@ public class SyncThreadOperations {
     public static void main(String[] args) {
 
         if (args.length < 3) {
-            System.out.println("Usage: java main.javaSyncThreadOperations <seat_count> <num_of_reader_threads> <num_of_writer_threads>");
+            System.out.println("Usage: java main.javaSyncThreadOperations " +
+                    "<seat_count> <num_of_reader_threads> <num_of_writer_threads>");
             System.exit(1);
         }
         int seatCount = Integer.parseInt(args[0]);
@@ -31,7 +32,10 @@ public class SyncThreadOperations {
             writerThreads[i] = new Thread(syncWriter);
         }
 
-        System.out.println("Operation will start with : " + seatCount + " seats, " + readerThreadCount + " reader threads, and " + writerThreadCount + " writer threads.");
+        System.out.println("Operation will start with : "
+                + seatCount + " seats, " +
+                readerThreadCount + " reader threads, and "
+                + writerThreadCount + " writer threads.");
 
         System.out.println("Press Enter To Start");
 

@@ -6,7 +6,7 @@ import model.Async.AsyncSeat;
 import java.util.Random;
 
 public class AsyncReader implements Runnable {
-    private AsyncFlight asyncFlight;
+    private final AsyncFlight asyncFlight;
 
     public AsyncReader(AsyncFlight asyncFlight) {
         this.asyncFlight = asyncFlight;
@@ -17,7 +17,7 @@ public class AsyncReader implements Runnable {
         while (true) {
             int seatIndex = new Random().nextInt(asyncFlight.getSeatCount());
             AsyncSeat asyncSeat = asyncFlight.getSeat(seatIndex);
-            asyncSeat.queryReservation(seatIndex);
+            asyncFlight.queryReservation(seatIndex);
             try {
                 Thread.sleep(100);
             } catch (InterruptedException e) {

@@ -5,8 +5,8 @@ import model.Sync.SyncFlight;
 import java.util.Random;
 
 public class SyncWriter implements Runnable {
-    private SyncFlight flight;
-    private boolean reserve;
+    private final SyncFlight flight;
+    private final boolean reserve;
 
     public SyncWriter(SyncFlight flight, boolean reserve) {
         this.flight = flight;

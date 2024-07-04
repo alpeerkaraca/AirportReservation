@@ -5,7 +5,7 @@ import model.Sync.SyncFlight;
 import java.util.Random;
 
 public class SyncReader implements Runnable {
-    private SyncFlight flight;
+    private final SyncFlight flight;
 
     public SyncReader(SyncFlight flight) {
         this.flight = flight;
